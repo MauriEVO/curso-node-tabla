@@ -6,15 +6,15 @@ const crearArchivo = async(base = 5, listar=false, hasta=12)=>{
       
       let salida, consola = '';
       for (let i = 1; i <= hasta; i++){
-         salida += `${base} x ${i} = ${base * i}\n`
-         consola += `${base} ${'x'.red} ${i} ${'='.red} ${base * i}\n`
+         salida += `${base} x ${i} = ${base * i}\n`;
+         consola += `${base} ${'x'.red} ${i} ${'='.red} ${base * i}\n`;
       }
       
       if(listar){
          console.log('====================='.green)
          console.log('  tabla de:', colors.blue(base))
          console.log('====================='.green)
-         console.log(salida)
+         console.log(consola)
       }
 
       fs.writeFileSync(`./salida/tabla-${base}.txt`, salida)
